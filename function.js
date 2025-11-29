@@ -46,3 +46,10 @@ function capitalize(string) {
 console.log(capitalize("abcd"));
 console.log(capitalize("ABCD"));
 console.log(capitalize("aBcD"));
+
+// Exo4
+
+function lastLetter(letter) {
+  return letter.slice(letter.length - 1);
+}
+console.log("la derniere lettre du mot est : " + lastLetter("abcd"));
