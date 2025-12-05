@@ -8,19 +8,14 @@ function getComputerChoice() {
   const numberRamdom = Math.floor(Math.random() * 3);
   return array[numberRamdom];
 }
-console.log(getComputerChoice());
 
 //Write the logic to get the human choice
 //Create a new function named getHumanChoice.
-let reponseUser = "";
-console.log("La fonction est appelée");
 
 function getHumanChoice() {
   const reponsePrompt = prompt("Rock  Paper  Scissors");
   return reponsePrompt;
 }
-const resultat = getHumanChoice();
-console.log("Tu as choisi :" + resultat);
 
 //Declare the players score variables
 
@@ -54,11 +49,38 @@ function playRound(humanChoice, computerChoice) {
     console.log("L'ordinateur gagne, Scissors bat Paper");
   }
 }
-playRound("Rock", "Paper");
-console.log(
-  "Score avant : Humain = " + humanScore + ", Ordinateur = " + computerScore
-);
-playRound("Rock", "Paper"); // L'ordinateur devrait gagner
-console.log(
-  "Score après : Humain = " + humanScore + ", Ordinateur = " + computerScore
-);
+
+function playGame() {
+  const humanSelection1 = getHumanChoice();
+  const computerselection1 = getComputerChoice();
+  playRound(humanSelection1, computerselection1);
+
+  const humanSelection2 = getHumanChoice();
+  const computerselection2 = getComputerChoice();
+  playRound(humanSelection2, computerselection2);
+
+  const humanSelection3 = getHumanChoice();
+  const computerselection3 = getComputerChoice();
+  playRound(humanSelection3, computerselection3);
+
+  const humanSelection4 = getHumanChoice();
+  const computerselection4 = getComputerChoice();
+  playRound(humanSelection4, computerselection4);
+
+  const humanSelection5 = getHumanChoice();
+  const computerselection5 = getComputerChoice();
+  playRound(humanSelection5, computerselection5);
+
+  console.log(
+    "Score final : Humain = " + humanScore + ", Ordinateur = " + computerScore
+  );
+  if (humanScore > computerScore) {
+    console.log("🎉 TU AS GAGNÉ !");
+  } else if (computerScore > humanScore) {
+    console.log("💻 L'ORDINATEUR A GAGNÉ !");
+  } else {
+    console.log("🤝 ÉGALITÉ PARFAITE !");
+  }
+}
+
+playGame();
